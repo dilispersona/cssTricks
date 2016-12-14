@@ -1,6 +1,7 @@
 body{
     margin: 0;
     font-family: monospace;
+    color: white;
 }
 p{
     margin: 0;
@@ -65,8 +66,17 @@ section:nth-of-type(5){
 /****************:empty psuedo class*********************/
 
 
-
-
+/*unset*/
+button{
+    display: block;
+    width:100px;
+    height: 50px;
+    background-color: slategray;
+    color: green;
+}
+section button{
+    color: unset;
+}
 
 
 
