@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Text Rotator</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .tricker {
+      height: 50px;
+      overflow: hidden;
+      margin: 100px auto 20px;
+    }
+    
+    .tricker h2 {
+      color: #333;
+      margin: 0;
+      height: 50px;
+      line-height: 50px;
+      font-size: 40px;
+      text-align: center;
+      text-transform: uppercase;
+      -webkit-transition: margin-top .3s ease;
+      transition: margin-top .3s ease;
+    }
+    
+    .subline {
+      width: 100px;
+      height: 2px;
+      margin: 10px auto;
+      background-color: #181818;
+    }
+    
+    p {
+      text-align: center;
+      line-height: 26px;
+      color: #676665;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="tricker">
+    <h2>Hey I'm first Here</h2>
+    <h2>Me, the second</h2>
+    <h2>And I am the Third!</h2>
+  </div>
+  <div class="subline"></div>
+  <p>Hello, It's the text rotater here. <br> Hope you like it.</p>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+
+  <script type="text/javascript">
+    (function ($) {
+      var duration = 2500;  // change this to change rotation time in milliseconds
+      var current = 1;
+      var tricker = $(".tricker");
+      var height = tricker.height();
+      var number = tricker.children().length;
+      var first = tricker.children().first();
+
+      setInterval(function () {
+        var interv = current * -1 * height;
+        first.css("margin-top", interv + "px");
+        if (current == number) {
+          first.css("margin-top", "0px");
+          current = 1;
+        } else {
+          current++;
+        }
+      }, duration);
+    })(jQuery);
+  </script>
+
+</body>
+
+</html>
